@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.applyflex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header */
+.container {
+  height: 4vh;
+  width: 70vw;
+}
+.search {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.search input {
+  width: 90%;
+  border-radius: 20px;
+  padding: 5px 15px;
+  border: none;
+  color: white;
+  outline: none;
+}
+.search .iconbox {
+  font-size: 28px;
+}
+.mike {
+  width: 4vh;
+  height: 5vh;
+  background-color: rgb(32, 31, 31);
+  font-size: 35px;
+  margin-left: 15px;
+  border-radius: 20px;
+}
+.notificaton {
+  font-size: 28px;
+  height: 3vh;
+  width: 3vw;
+  margin-left: 5px;
+}
+.profile {
+  margin-left: 25px;
+  align-self: center;
+}
+
+/* post item */
+.postbox {
+  flex-direction: column;
+  width: 25vw;
+  height: 55vh;
+}
+.postbox .top {
+  width: 25vw;
+  height: 40vh;
+  border-radius: 30px;
+}
+.top img {
+  height: 100%;
+  border-radius: 30px;
+}
+.postbox .middle {
+  margin: 5px;
+}
+.middle .title {
+  overflow: hidden;
+}
