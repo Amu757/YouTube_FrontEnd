@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* navigation */
+.navigation-box{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    padding: 5px 5px 5px 20px;
+    width: 20vw;
+    min-height: 100vh;
+    border: 1px solid white;
+}
+
+/* option */
+.option-box{
+    display: flex;
+    column-gap: 15px;
+    width: 20vh;
+    justify-content: start;
+}
+.option-box .icon{
+   font-size: 22px;
+}
+.option-box .item{
+    height: 4vh;
+    width: 15vw;
+    color: white;
+    display: flex;
+    justify-content: start;
+}
+.option-box .active{
+    color: white;
+}
+/* section */
+.navsection{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    min-height:25vh;
+    width: 19vw;
+}
+.navsection .title{
+    align-self: start;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.title .menu{
+    font-size: 28px;
+}
+.navsection .rular{
+    font-size: 28px;
+    margin: 5px 0;
+    width: 18vw;
+}
+/* Header */
+.head{
+    min-height: 25vh;
+    width: 19vw;
+
+}

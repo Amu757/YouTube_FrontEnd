@@ -1,9 +1,9 @@
-import React from 'react'
-
+import Header from "./Header";
+import "./nav.css";
 function Subscription() {
   return (
-    <div>Subscription</div>
-  )
+   <h2>subscriptoin</h2>
+  );
 }
 
-export default Subscription
+export default Subscription;
