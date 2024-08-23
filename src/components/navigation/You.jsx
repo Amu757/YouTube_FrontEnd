@@ -10,7 +10,7 @@ import { GoDownload } from "react-icons/go";
 function You() {
   return (
     <>
-      <section className="navsection">
+      <section className="navsection youheight">
         <div className="title">
           <h4>You</h4>
         </div>

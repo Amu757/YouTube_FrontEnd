@@ -1,7 +1,31 @@
 function Copyright() {
   return (
-    <div>Copyright</div>
-  )
+    <>
+      <section className="navsection">
+        <p className="links">
+          <ul>
+            <li>About</li>
+            <li>Press</li>
+            <li>Copyright</li>
+            <li>Contact us</li>
+            <li>Creator</li>
+            <li>Advertise</li>
+            <li>Developers</li>
+          </ul>
+        </p>
+        <p className="links">
+          <ul>
+            <li>Terms</li>
+            <li>Privacy</li>
+            <li>Policy $ Safety</li>
+            <li>How YouTube works</li>
+            <li>Test new features</li>
+          </ul>
+        </p>
+        <p className="developer">© 2024 Aman Waghmare</p>
+      </section>
+    </>
+  );
 }
 
-export default Copyright
+export default Copyright;
