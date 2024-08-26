@@ -1,13 +1,12 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 // import {useDispatch} from "react-redux"
 // import {login,logout} from "./store/authSlice"
-
-// import Homepage from "./components/Homepage";
-// import Loader from "./components/Loader/Loder";
-import Contact from "./pages/Contact";
+import "./App.css"
+import Homepage from "./components/Homepage";
+import Loader from "./components/Loader/Loder";
 
 function App() {
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   // const dispatch = useDispatch();
 
   // useEffect(() => {
@@ -22,9 +21,7 @@ function App() {
   //   .finally(() => setLoading(false));
   // }, []);
 
-  // return !loading ? <Homepage /> : <Loader />;
-  // return <Homepage />;
-  return <Contact />;
+  return !loading ? <Homepage /> : <Loader />;
 }
 
 export default App;
