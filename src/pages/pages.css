@@ -31,7 +31,7 @@
   height: 12vh;
   width: 6vw;
 }
-.logo img{
+.logo img {
   height: 100%;
 }
 .left .heading {
@@ -43,14 +43,15 @@
   padding-top: 10%;
   row-gap: 40px;
 }
-.right input , .signup_right select{
+.right input,
+.signup_right select {
   padding: 20px 25px;
   width: 34.2vw;
   font-size: 16px;
   background-color: transparent;
   border-radius: 8px;
   border: 1px solid black;
-  color:rgb(4, 4, 4)
+  color: rgb(4, 4, 4);
 }
 .right p {
   color: rgba(0, 0, 0, 0.664);
@@ -71,16 +72,32 @@
 }
 
 /* signup */
-.form-container .signup_right{
+.form-container .signup_right {
   padding-top: 8%;
   row-gap: 25px;
 }
-.signup_right .firstrow{
+.signup_right .firstrow {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   column-gap: 10px;
 }
-.firstrow input{
+.firstrow input {
   width: 11vw;
+}
+.checkboxdiv {
+  display: flex;
+    width: 35%;
+    height: 5vh;
+    align-items: center;
+    padding: 0px 5px;
+}
+.checkboxdiv input {
+  width: 1vw;
+}
+.checkboxdiv label {
+  width: 9vw;
+}
+#showpass {
+  background-color: white;
 }
