@@ -5,7 +5,7 @@
   row-gap: 20px;
   align-items: center;
   padding: 5px 5px 5px 20px;
-  width: 20vw;
+  width: 14vw;
   height: 100vh;
   overflow-y: scroll;
   scrollbar-width: 2px;
@@ -15,11 +15,14 @@
 .option-box {
   display: flex;
   column-gap: 15px;
-  width: 23vh;
+  width: 26vh;
   justify-content: start;
+  padding: 1px 10px;
+  border-radius: 10px;
 }
-.option-box:hover{
-    cursor: pointer;
+.option-box:hover {
+  cursor: pointer;
+  background-color: rgb(90, 89, 89);
 }
 .option-box .icon {
   font-size: 22px;
@@ -39,7 +42,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 5px;
-  width: 17vw;
+  width: 14vw;
 }
 ::-webkit-scrollbar {
   width: 2px;
@@ -89,17 +92,16 @@
 /* Header */
 .head {
   min-height: 25vh;
-  width: 17vw;
+  width: 14vw;
 }
 /* copywrite */
 .links ul {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 10px;
+  column-gap: 7px;
   list-style-type: none;
-  width: 29vh;
-  padding-left: 5px;
-  font-size: 15px;
+  width: 28vh;
+  font-size: 14px;
   color: rgb(220, 218, 218);
   margin-bottom: 10px;
 }
@@ -109,4 +111,9 @@
   display: flex;
   justify-self: start;
   margin-bottom: 20px;
+}
+
+/* subscription */
+.sub{
+  margin-top: 45px;
 }

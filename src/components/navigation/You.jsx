@@ -6,6 +6,7 @@ import { GoVideo } from "react-icons/go";
 import { IoIosTimer } from "react-icons/io";
 import { AiOutlineLike } from "react-icons/ai";
 import { GoDownload } from "react-icons/go";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 function You() {
   return (
@@ -14,6 +15,8 @@ function You() {
         <div className="title">
           <h4>You</h4>
         </div>
+        
+        <Option Icon={IoMdAddCircleOutline} item="Add Video" />
         <Option Icon={BiSolidUserPin} item="Your Channel" />
         <Option Icon={LuHistory} item="History" />
         <Option Icon={MdOutlinePlaylistPlay} item="Playlists" />

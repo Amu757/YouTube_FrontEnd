@@ -2,7 +2,8 @@ import "./pages.css";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-
+import { login as storelogin } from "../store/authSlice";
+import { useDispatch } from "react-redux";
 // eslint-disable-next-line react/prop-types
 function Password({ register }) {
   const [show, setShow] = useState(false);
@@ -35,11 +36,42 @@ function Password({ register }) {
 function Login() {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [pagenum, setPagenum] = useState(1);
-  const login = (data) => {
-    console.log("my login details: ", data);
-    navigate("/");
+
+  const login = async (data) => {
+    const token = localStorage.getItem("accessToken");
+
+    try {
+      const response = await fetch("http://localhost:8000/api/v1/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        const error = await response.json();
+        console.log("error in login", error);
+        alert(error.message);
+        return;
+      }
+
+      const responsedata = await response.json();
+
+      localStorage.setItem("accessToken", responsedata.data.accessToken);
+      console.log("successful login: ", responsedata.data);
+      const user_info = responsedata.data.user;
+      if (user_info) dispatch(storelogin(user_info));
+      // alert("Successful Login");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+
 
   return (
     <div className="form-page">
@@ -56,8 +88,8 @@ function Login() {
             <>
               <input
                 type="text"
-                placeholder="Email or phone"
-                {...register("username", { required: true })}
+                placeholder="Email"
+                {...register("email", { required: true })}
               />
               <p>Not your computer? Use Guest mode to sign in privately.</p>
               <div className="lastline">

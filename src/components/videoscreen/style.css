@@ -1,12 +1,21 @@
 .fullscreen{
-    height: 100vh;
-    width: 100vw;
+    height: 89vh;
+    width: 83vw;
+    position: absolute;
+    z-index: 5;
+    background-color: black;
+    top: 8vh;
 }
 .videobox{
-    height: 100vh;
-    width: 100vw;
+    height: 89vh;
+    width: 83vw;
     position: relative;
 
+}
+.videobox video{
+    height: 89vh;
+    width: 80vw;
+    border-radius: 20px;
 }
 .close{
     height: 3vh;
@@ -14,4 +23,6 @@
     position: absolute;
     top: 2vh;
     right: 3vw;
+    font-size: 25px;
+    color: red;
 }

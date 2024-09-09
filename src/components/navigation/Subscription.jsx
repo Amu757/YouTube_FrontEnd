@@ -6,9 +6,9 @@ import "./nav.css";
 function Subscription() {
   return (
     <>
-    <section className="navsection">
+    <section className="navsection sub" >
       <div className="title">
-        <h4>Subscriptions</h4>
+        <h4 >Subscriptions</h4>
       </div>
       <Option Icon={SiCoinmarketcap} item="StudyIQ IAS" />
       <Option Icon={SiCoinmarketcap} item="StudyIQ IAS" />

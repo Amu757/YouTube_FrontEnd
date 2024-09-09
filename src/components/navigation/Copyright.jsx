@@ -2,7 +2,7 @@ function Copyright() {
   return (
     <>
       <section className="navsection">
-        <p className="links">
+        <div className="links">
           <ul>
             <li>About</li>
             <li>Press</li>
@@ -12,8 +12,8 @@ function Copyright() {
             <li>Advertise</li>
             <li>Developers</li>
           </ul>
-        </p>
-        <p className="links">
+        </div>
+        <div className="links">
           <ul>
             <li>Terms</li>
             <li>Privacy</li>
@@ -21,7 +21,7 @@ function Copyright() {
             <li>How YouTube works</li>
             <li>Test new features</li>
           </ul>
-        </p>
+        </div>
         <p className="developer">© 2024 Aman Waghmare</p>
       </section>
     </>

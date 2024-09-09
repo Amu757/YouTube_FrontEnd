@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { login as storelogin } from "../store/authSlice";
+import Loader from "../components/Loader/Loder";
 import "./pages.css";
 
 function Name({ setPagenum, pagenum, register }) {
@@ -147,17 +151,16 @@ function Signup() {
   const { register, handleSubmit } = useForm();
   const [pass, setPass] = useState("");
   const [cpass, setCpass] = useState("");
-
+  const [loader, setLoader] = useState(true);
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const create = async (data) => {
     try {
-      if (cpass !== "" && cpass === pass) {
-        console.log("Password is excepted");
-      } else {
+      if (cpass === "" && cpass !== pass) {
         console.log("Password should be maching, ERROR!");
         alert("Password should be maching, ERROR!");
+        throw new Error("mismatch", "password is not matching");
       }
-
-      console.log("your form data is : ", data);
 
       const formData = new FormData();
       formData.append("avatar", data.avatar[0]); // Add the file to the FormData object
@@ -189,15 +192,23 @@ function Signup() {
         if (!response.ok) {
           const error = await response.json();
           console.log("error in signup", error);
-          alert(error.message)
+          alert(error.message);
           return;
         }
 
         const responsedata = await response.json();
         console.log("successful signup: ", responsedata);
-        alert("Successful Registration");
+
+        if (responsedata) {
+          if (responsedata.createdUser) dispatch(storelogin(responsedata.createdUser));
+        }
+
+        setLoader(false);
+        navigate("/");
+        // alert("Successful Registration");
       } catch (error) {
         console.log(error);
+        // setError(error.message);
       }
     } catch (error) {
       console.log(error);
@@ -271,9 +282,9 @@ function Signup() {
               pass={pass}
               cpass={cpass}
             />
-          ) : (
-            <p>Thanks for the data</p>
-          )}
+          ) : loader === true ? (
+            <Loader />
+          ) : null}
         </div>
       </form>
     </div>
