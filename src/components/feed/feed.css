@@ -2,14 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 /* Header */
 .container {
   height: 4vh;
   width: 82vw;
- justify-content: end;
+  justify-content: end;
+  position: relative;
 }
 .search {
   display: flex;
@@ -30,12 +30,12 @@
 .mike {
   width: 6vh;
   height: 6vh;
-  background-color: rgb(29,29,29);
+  background-color: rgb(29, 29, 29);
   font-size: 30px;
   margin-left: 15px;
   border-radius: 20px;
 }
-.lastitems{
+.lastitems {
   height: 6vh;
   width: 20vw;
   justify-content: end;
@@ -51,12 +51,12 @@
   width: 34px;
   height: 5vh;
 }
-.profile img{
+.profile img {
   width: 100%;
   border-radius: 30px;
 }
 /* footer */
-.post-container{
+.post-container {
   margin-top: 10px;
   width: 84vw;
   display: flex;
@@ -90,9 +90,92 @@
   display: flex;
   align-items: center;
 }
-.middle .options{
+.middle .options {
   margin-left: 5px;
 }
 .middle .title {
   overflow-x: hidden;
+}
+/* UserMenu */
+.menubox {
+  width: 20vw;
+  position: absolute;
+  top: 6vh;
+  right: 3vw;
+  background-color: rgb(43, 43, 43);
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.menubox hr {
+  margin: 5px 0px;
+  width: 100%;
+  transform: scaleY(0.2);
+}
+.api-container {
+  width: 18vw;
+  height: 5vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 15px;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.api-container:hover {
+  cursor: pointer;
+  background-color: rgb(90, 89, 89);
+}
+.api-container .icon {
+  font-size: 20px;
+}
+.api-container .item {
+  font-size: 17px;
+}
+
+/* profileGate */
+.menu-head {
+  width: 18.7vw;
+  height: 14vh;
+  display: flex;
+  column-gap: 15px;
+  border-bottom: 1px solid grey;
+  padding-top: 10px;
+}
+.menu-head .propic {
+  height: 8vh;
+  width: 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.propic img {
+  width: 100%;
+  border-radius: 50%;
+}
+.menu-head .yourinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 5px;
+  width: 15vw;
+}
+.yourinfo p {
+  color: rgb(33, 85, 239);
+}
+
+/* apioptions */
+.resetpass{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -6vw;
+  top: -7vh;
+  height: 100vh;
+  width: 100vw;
+  z-index: 6;
 }

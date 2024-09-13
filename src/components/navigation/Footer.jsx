@@ -8,7 +8,7 @@ function Footer() {
   return (
     <>
       <section className="navsection">
-        <Option Icon={IoSettingsOutline} item="Settinngs" />
+        <Option Icon={IoSettingsOutline} item="Settings" />
         <Option Icon={FaRegFlag} item="Report history" />
         <Option Icon={IoMdHelpCircle} item="Help" />
         <Option Icon={RiFeedbackLine} item="Send feedback" />

@@ -14,9 +14,9 @@ function Navigation() {
       <Header />
       <You/>
       <Subscription />
+      <Explore />
       <More />
       <Footer />
-      <Explore />
       <Copyright />
     </div>
   );

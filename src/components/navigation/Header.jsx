@@ -13,9 +13,9 @@ function Header() {
           <RxHamburgerMenu className="menu" />
           <h2>Youtube logo</h2>
         </div>
-        <Option Icon={IoMdHome} item="Home" />
-        <Option Icon={BiSolidVideos} item="Shorts" />
-        <Option Icon={MdSubscriptions} item="Subscriptions" />
+        <Option Icon={IoMdHome} item="Home" goto="/"/>
+        <Option Icon={BiSolidVideos} item="Shorts" goto="shorts"/>
+        <Option Icon={MdSubscriptions} item="Subscriptions" goto="subVid"/>
         <hr className="rular" />
       </section>
     </div>

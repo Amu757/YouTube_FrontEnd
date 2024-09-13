@@ -16,7 +16,7 @@ function You() {
           <h4>You</h4>
         </div>
         
-        <Option Icon={IoMdAddCircleOutline} item="Add Video" />
+        <Option Icon={IoMdAddCircleOutline} item="Add Video" goto="/video"/>
         <Option Icon={BiSolidUserPin} item="Your Channel" />
         <Option Icon={LuHistory} item="History" />
         <Option Icon={MdOutlinePlaylistPlay} item="Playlists" />
