@@ -1,7 +1,10 @@
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { changeNav } from "../store/authSlice";
 import Loader from "../components/Loader/Loder";
+import "./pages.css"
 function Password({ register }) {
   const [show, setShow] = useState(false);
   return (
@@ -30,14 +33,13 @@ function Password({ register }) {
   );
 }
 
-function Resetpass() {
+function Resetpass({setActiveOption}) {
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch()
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    alert("Do you really want to change your password");
-  }, []);
+
 
   const resetPassword = async (data) => {
     const token = localStorage.getItem("accessToken");
@@ -79,6 +81,7 @@ function Resetpass() {
         <Loader />
       ) : (
         <div className="form-page">
+          <h1 className="closewindow" onClick={()=>{setActiveOption("Home"); dispatch(changeNav("Home"))}}>x</h1>
           <form
             className="form-container"
             onSubmit={handleSubmit(resetPassword)}

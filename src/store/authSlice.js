@@ -3,8 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   status: false,
   data: null,
-  activeNav: "home",
-  profileIsCliked:false,
+  activeNav: "Home",
+  vidUrl: null,
+  videoId: null,
+  showprofilemenu: false,
 };
 
 const authSlice = createSlice({
@@ -20,18 +22,22 @@ const authSlice = createSlice({
       state.data = null;
       console.log("inside authslice logout method reset done");
     },
-    toggleNav: (state, action) => {
+    changeNav: (state, action) => {
+      if (action.payload.navname === "fullscreen video") {
+        state.activeNav = action.payload.navname;
+        state.vidUrl = action.payload.videourl;
+        state.videoId = action.payload.videoId;
+        return;
+      }
       state.activeNav = action.payload;
-      console.log("acitve nav is ",action.payload)
+      console.log("acitve nav is ", action.payload);
     },
-    profileCliked: (state) => {
-      state.profileIsCliked =  !state.profileIsCliked;
-      console.log("you clicked profile, showwing options ")
+    toggleProMenu: (state, action) => {
+      state.showprofilemenu = action.payload;
     },
-
   },
 });
 
-export const { login, logout, toggleNav,profileCliked } = authSlice.actions;
+export const { login, logout, changeNav, toggleProMenu } = authSlice.actions;
 
 export default authSlice.reducer;

@@ -1,13 +1,15 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../store/authSlice";
+import { useState } from "react";
 import Loader from "../Loader/Loder";
 import Resetpass from "../../pages/Resetpass";
-import { useState } from "react";
-import "./feed.css"
-function ApiOption({ apiName, Icon, goto = "" }) {
-  const dispatch = useDispatch();
+import { changeNav } from "../../store/authSlice";
+
+import "./feed.css";
+function ApiOption({ apiName, Icon, setShowMenu }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [activeOption, setActiveOption] = useState(null);
 
@@ -44,19 +46,25 @@ function ApiOption({ apiName, Icon, goto = "" }) {
       console.log(error);
     }
   };
- 
 
   const handleClick = () => {
+    setShowMenu(false);
     switch (apiName) {
       case "Sign out":
         getLogout();
         break;
       case "Reset password":
-        setActiveOption("resetpass")
-        console.log("show reset pass");
-        // resetPassword();
-        // getLogout();
-        // setActiveOption("")
+        if (!confirm("Do you really want to change your password")) return;
+        setActiveOption("resetpass");
+        break;
+      case "Update account":
+        dispatch(changeNav(apiName));
+        break;
+      case "Update avatar":
+        dispatch(changeNav(apiName));
+        break;
+      case "Update coverImage":
+        dispatch(changeNav(apiName));
         break;
       default:
         console.log("nothing triggered");
@@ -70,7 +78,7 @@ function ApiOption({ apiName, Icon, goto = "" }) {
         <Loader />
       ) : activeOption === "resetpass" ? (
         <div className="resetpass">
-          <Resetpass />
+          <Resetpass setActiveOption={setActiveOption} />
         </div>
       ) : (
         <div className="api-container" onClick={() => handleClick()}>

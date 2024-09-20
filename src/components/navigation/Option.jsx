@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { toggleNav } from "../../store/authSlice";
+import { changeNav } from "../../store/authSlice";
 import { useDispatch } from "react-redux";
 import "./nav.css";
 
@@ -7,23 +7,26 @@ function Option({ Icon, item, goto = "" }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleClick = () => {
-    let clickedOn = "home";
+    let clickedOn = "Home";
     switch (goto) {
       case "/":
         navigate(goto);
-        clickedOn = "home";
+        clickedOn = "Home";
         break;
-      case "shorts":
-        navigate("/");
-        clickedOn = "shorts";
-        break;
-      case "subVid":
-        clickedOn = "subVid";
-        break;
+      // case "shorts":
+      //   clickedOn = "shorts";
+      //   break;
+      // case "subVid":
+      //   clickedOn = "subVid";
+      //   break;
+      // case "profilepage":
+      //   clickedOn = "profilepage";
+      // break;
       default:
-        if (goto) navigate(goto);
+        clickedOn = goto;
+      // if (goto) navigate(goto);
     }
-    dispatch(toggleNav(clickedOn));
+    dispatch(changeNav(clickedOn));
   };
 
   return (

@@ -2,16 +2,16 @@ import { IoSearch } from "react-icons/io5";
 import { TiMicrophoneOutline } from "react-icons/ti";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
-// import { profileCliked } from "../../store/authSlice";
+import { toggleProMenu } from "../../store/authSlice";
 import UserMenu from "./UserMenu";
 
 import "./feed.css";
-import { useState } from "react";
+// import { useState } from "react";
 function Header() {
-  // const dispatch = useDispatch();
   let profilepic = useSelector((state) => state.auth.data?.avatar);
-  // const profileIsCliked = useSelector((state) => state.auth.profileIsCliked);
-  const [profileIsCliked, setProfileIsClicked] = useState(false);
+  // const [profileIsCliked, setProfileIsClicked] = useState(useSelector((state) => state.auth.showprofilemenu));
+  const profileIsCliked = useSelector((state) => state.auth.showprofilemenu);
+  const dispatch = useDispatch();
 
   return (
     <div className="container applyflex">
@@ -32,7 +32,10 @@ function Header() {
           </div>
           <div
             className="profile"
-            onClick={() => setProfileIsClicked(!profileIsCliked)}
+            onClick={() => {
+              // setProfileIsClicked(!profileIsCliked);
+              dispatch(toggleProMenu(!profileIsCliked));
+            }}
           >
             <img src={profilepic} alt="profilepic" />
           </div>

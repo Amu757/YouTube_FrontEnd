@@ -7,6 +7,7 @@ import App from "./App.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx"
 import Createpost from './components/navigation/Createpost.jsx'
+import Profilepage from "./pages/Profilepage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,11 +26,7 @@ const router = createBrowserRouter([
     path: "/video",
     element: <Createpost/>,
   },
-   // {
-  //   path: "/all-videos",
-  //   element: <AllVideos/>,
-  // },
-  // {
+    // {
   //   path: "/video/:vid_id",
   //   element: <Video/>,
   // },

@@ -1,4 +1,4 @@
-/* sign in */
+/* sign in  */
 .form-page {
   height: 100vh;
   width: 100vw;
@@ -6,6 +6,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.form-page .closewindow{
+  height: 50px;
+    width: 3vw;
+    position: absolute;
+    top: 4vh;
+    right: 10vw;
+    font-size: 35px;
+    border-radius: 50%;
+    color: rgb(105, 104, 104);
+    display: flex;
+    justify-content: center;
+    line-height: 6vh;
+}
+.closewindow:hover{
+  background-color: rgb(80, 80, 80);
+  color: white;
+  cursor: pointer;
 }
 .form-container {
   height: 59vh;
@@ -87,10 +106,10 @@
 }
 .checkboxdiv {
   display: flex;
-    width: 35%;
-    height: 5vh;
-    align-items: center;
-    padding: 0px 5px;
+  width: 35%;
+  height: 5vh;
+  align-items: center;
+  padding: 0px 5px;
 }
 .checkboxdiv input {
   width: 1vw;
@@ -100,4 +119,171 @@
 }
 #showpass {
   background-color: white;
+}
+
+/* profile page */
+.profile-container {
+  min-height: 100vh;
+  width: 84vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-left: 5vw;
+  position: relative;
+  /* left: -59vw; */
+  left: 0vw;
+  top: -2vh;
+  background-color: black;
+  z-index: 7;
+}
+.top-container {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  column-gap: 10px;
+}
+.image_box {
+  height: 30vh;
+  width: 11vw;
+  border-radius: 50%;
+}
+.image_box img {
+  width: 100%;
+  border-radius: 50%;
+}
+.info_box {
+  height: inherit;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 5px;
+  padding: 5px;
+}
+.info_box h3 {
+  color: rgb(151, 151, 151);
+}
+.info_box p {
+  font-size: 15px;
+  color: rgb(151, 151, 151);
+}
+.info_box:nth-child(3) {
+  font-size: 15px;
+}
+.info_box p:hover {
+  cursor: pointer;
+}
+.buttons_box {
+  width: 60vw;
+  display: flex;
+  column-gap: 20px;
+}
+.probtn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: rgb(53, 52, 52);
+}
+.probtn:hover {
+  cursor: pointer;
+  background-color: rgb(86, 86, 86);
+}
+
+.menubar {
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+  position: relative;
+  padding-left: 5px;
+}
+.menubar:hover {
+  cursor: pointer;
+}
+.menubar .iconsearch {
+  font-size: 23px;
+  margin-top: 10px;
+}
+.menubar .activebar {
+  position: absolute;
+  bottom: 0px;
+  left: 0vw;
+  height: 3px;
+  width: 4vw;
+  background-color: #ffffff;
+}
+.profile-container hr {
+  margin-top: 20px;
+  width: 100%;
+}
+.footer_container,
+.footer_container .container {
+  min-height: 50vh;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+  overflow-y: auto;
+}
+.footer_container .title {
+  margin: 10px 38px;
+}
+
+.item_container {
+  width: 90%;
+  height: 20vh;
+  padding: 5px;
+  display: flex;
+  column-gap: 35px;
+}
+.video_box {
+  height: 20vh;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px;
+}
+.video_box img {
+  border-radius: 18px;
+  height: 100%;
+}
+.vid_info {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 15px;
+}
+.vid_info p {
+  margin-bottom: 10px;
+}
+
+.footer_container .container {
+  width: 100%;
+  padding: 10px 45px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-bottom: 30px;
+}
+/* updateuserbox */
+.updateuserbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+.updateuserbox input{
+  padding: 20px 25px;
+  width: 34.2vw;
+  font-size: 16px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 1px solid black;
+  color: rgb(4, 4, 4);
 }

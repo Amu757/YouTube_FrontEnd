@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { SlOptionsVertical } from "react-icons/sl";
+import { useDispatch } from "react-redux";
+import { changeNav } from "../../store/authSlice";
 import "./feed.css";
-import { useState } from "react";
-import Fullscreen from "../videoscreen/Fullscreen";
 
 // eslint-disable-next-line react/prop-types
 function PostItem({
@@ -12,36 +12,36 @@ function PostItem({
   thumbnail,
   userName,
   view,
+  videoId,
 }) {
-  const [showFullVideo, setShowFullVideo] = useState(false);
+  const dispatch = useDispatch();
+  let attributes = {
+    navname: "fullscreen video",
+    videourl: videoFile,
+    videoId: videoId
+  };
 
   return (
-    <>
-      {showFullVideo ? (
-        <Fullscreen video={videoFile} setShowFullVideo={setShowFullVideo} />
-      ) : (
-        <div
-          className="postbox applyflex"
-          onClick={() => setShowFullVideo(true)}
-        >
-          <div className="top applyflex">
-            <img className="thumbnail" src={thumbnail} alt="thumbnail" />
-          </div>
-          <div className="middle applyflex">
-            <div className="title">
-              {title} | {description}
-            </div>
-            <div className="options">
-              <SlOptionsVertical />
-            </div>
-          </div>
-          <div className="bottom">
-            <p className="profilename">{userName}</p>
-            <p className="video-details">{view} views | 10months ago</p>
-          </div>
+    <div
+      className="postbox applyflex"
+      onClick={() => dispatch(changeNav(attributes))}
+    >
+      <div className="top applyflex">
+        <img className="thumbnail" src={thumbnail} alt="thumbnail" />
+      </div>
+      <div className="middle applyflex">
+        <div className="title">
+          {title} | {description}
         </div>
-      )}
-    </>
+        <div className="options">
+          <SlOptionsVertical />
+        </div>
+      </div>
+      <div className="bottom">
+        <p className="profilename">{userName}</p>
+        <p className="video-details">{view} views | 10months ago</p>
+      </div>
+    </div>
   );
 }
 

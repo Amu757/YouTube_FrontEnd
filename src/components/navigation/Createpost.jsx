@@ -81,7 +81,6 @@ function PostForm() {
     navigate("/");
   };
   return (
-    // <>
     <div className="postmodal">
       {isLoading ? (
         <Loader />
@@ -159,8 +158,6 @@ function PostForm() {
         </>
       )}
     </div>
-
-    // </>
   );
 }
 

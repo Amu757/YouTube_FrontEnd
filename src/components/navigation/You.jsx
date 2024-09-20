@@ -15,15 +15,19 @@ function You() {
         <div className="title">
           <h4>You</h4>
         </div>
-        
-        <Option Icon={IoMdAddCircleOutline} item="Add Video" goto="/video"/>
-        <Option Icon={BiSolidUserPin} item="Your Channel" />
-        <Option Icon={LuHistory} item="History" />
-        <Option Icon={MdOutlinePlaylistPlay} item="Playlists" />
-        <Option Icon={GoVideo} item="Your Videos" />
-        <Option Icon={IoIosTimer} item="Watch Later" />
-        <Option Icon={AiOutlineLike} item="Liked Videos" />
-        <Option Icon={GoDownload} item="Downloads" />
+
+        <Option Icon={IoMdAddCircleOutline} item="Add Video" goto="/video" />
+        <Option Icon={BiSolidUserPin} item="Your Channel" goto="profilepage" />
+        <Option Icon={LuHistory} item="History" goto="History" />
+        <Option
+          Icon={MdOutlinePlaylistPlay}
+          item="Playlists"
+          goto="Playlists"
+        />
+        <Option Icon={GoVideo} item="Your Videos" goto="Videos" />
+        <Option Icon={IoIosTimer} item="Watch Later" goto="Watch Later" />
+        <Option Icon={AiOutlineLike} item="Liked Videos" goto="Liked Videos" />
+        <Option Icon={GoDownload} item="Downloads" goto="Downloads" />
         <hr className="rular" />
       </section>
     </>
