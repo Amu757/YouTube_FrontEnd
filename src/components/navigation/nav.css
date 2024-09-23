@@ -75,8 +75,9 @@
 
 .navsection .title {
   align-self: start;
-  display: flex;
-  align-items: center;
+  /* justify-self: center; */
+  /* display: flex;
+  align-items: center; */
   column-gap: 20px;
   margin-top: 10px;
   margin-bottom: 20px;

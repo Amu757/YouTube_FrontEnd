@@ -45,6 +45,13 @@ function Bday({ setPagenum, pagenum, register }) {
         <option value="Female">Female</option>
         <option value="other">Other</option>
       </select>
+      <div>
+        <input
+          type="text"
+          placeholder="Something About Channel"
+          {...register("about")}
+        />
+      </div>
       <div className="lastline">
         <button className="nextbtn" onClick={() => setPagenum(pagenum + 1)}>
           Next
@@ -152,8 +159,8 @@ function Signup() {
   const [pass, setPass] = useState("");
   const [cpass, setCpass] = useState("");
   const [loader, setLoader] = useState(true);
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const create = async (data) => {
     try {
       if (cpass === "" && cpass !== pass) {
@@ -200,7 +207,8 @@ function Signup() {
         console.log("successful signup: ", responsedata);
 
         if (responsedata) {
-          if (responsedata.createdUser) dispatch(storelogin(responsedata.createdUser));
+          if (responsedata.createdUser)
+            dispatch(storelogin(responsedata.createdUser));
         }
 
         setLoader(false);

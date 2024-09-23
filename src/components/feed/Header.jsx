@@ -6,10 +6,8 @@ import { toggleProMenu } from "../../store/authSlice";
 import UserMenu from "./UserMenu";
 
 import "./feed.css";
-// import { useState } from "react";
 function Header() {
   let profilepic = useSelector((state) => state.auth.data?.avatar);
-  // const [profileIsCliked, setProfileIsClicked] = useState(useSelector((state) => state.auth.showprofilemenu));
   const profileIsCliked = useSelector((state) => state.auth.showprofilemenu);
   const dispatch = useDispatch();
 
@@ -33,7 +31,6 @@ function Header() {
           <div
             className="profile"
             onClick={() => {
-              // setProfileIsClicked(!profileIsCliked);
               dispatch(toggleProMenu(!profileIsCliked));
             }}
           >

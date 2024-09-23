@@ -7,15 +7,15 @@ import { IconContext } from "react-icons/lib";
 
 function More() {
   return (
-    <IconContext.Provider value={{color:"red"}}>
+    <IconContext.Provider value={{color:"yellow"}}>
     <section className="navsection">
       <div className="title">
         <h4>More from YouTube</h4>
       </div>
-      <Option Icon={IoLogoYoutube} item="YouTube Premium" />
-      <Option Icon={RiVideoLine} item="YouTube Studio" />
-      <Option Icon={MdMusicVideo} item="YouTube Music" />
-      <Option Icon={SiYoutubekids} item="YouTube Kids" />
+      <Option Icon={IoLogoYoutube} navName="YouTube Premium" />
+      <Option Icon={RiVideoLine} navName="YouTube Studio" />
+      <Option Icon={MdMusicVideo} navName="YouTube Music" />
+      <Option Icon={SiYoutubekids} navName="YouTube Kids" />
       <hr className="rular" />
     </section>
     </IconContext.Provider>

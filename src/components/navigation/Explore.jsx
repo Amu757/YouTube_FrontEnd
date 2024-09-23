@@ -4,12 +4,12 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 import { IoMusicalNoteOutline } from "react-icons/io5";
 import { PiFilmSlateBold } from "react-icons/pi";
 import { IoIosRadio } from "react-icons/io";
-import { SiYoutubegaming } from "react-icons/si";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { CiTrophy } from "react-icons/ci";
 import { IoBulbOutline } from "react-icons/io5";
-import { FaStoreAlt } from "react-icons/fa";
 import { MdPodcasts } from "react-icons/md";
+import { IoGameControllerOutline } from "react-icons/io5";
+import { IoStorefrontOutline } from "react-icons/io5";
 
 function Explore() {
   return (
@@ -18,17 +18,17 @@ function Explore() {
       <div className="title">
         <h4>Explore</h4>
       </div>
-      <Option Icon={TbTrendingUp} item="Trending" />
-      <Option Icon={MdOutlineShoppingBag} item="Shopping" />
-      <Option Icon={IoMusicalNoteOutline} item="Music" />
-      <Option Icon={PiFilmSlateBold} item="Films" />
-      <Option Icon={IoIosRadio} item="Live" />
-      <Option Icon={SiYoutubegaming} item="Gaming" />
-      <Option Icon={IoNewspaperOutline} item="News" />
-      <Option Icon={CiTrophy} item="Sport" />
-      <Option Icon={IoBulbOutline} item="Courses" />
-      <Option Icon={FaStoreAlt} item="Fashion & beauty" />
-      <Option Icon={MdPodcasts} item="Podcasts" />
+      <Option Icon={TbTrendingUp} navName="Trending" />
+      <Option Icon={MdOutlineShoppingBag} navName="Shopping" />
+      <Option Icon={IoMusicalNoteOutline} navName="Music" />
+      <Option Icon={PiFilmSlateBold} navName="Films" />
+      <Option Icon={IoIosRadio} navName="Live" />
+      <Option Icon={IoGameControllerOutline} navName="Gaming" />
+      <Option Icon={IoNewspaperOutline} navName="News" />
+      <Option Icon={CiTrophy} navName="Sport" />
+      <Option Icon={IoBulbOutline} navName="Courses" />
+      <Option Icon={IoStorefrontOutline} navName="Fashion & beauty" />
+      <Option Icon={MdPodcasts} navName="Podcasts" />
       <hr className="rular" />
     </section>
   </>

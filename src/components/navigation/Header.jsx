@@ -1,8 +1,10 @@
 import Option from "./Option";
-import { IoMdHome } from "react-icons/io";
-import { BiSolidVideos } from "react-icons/bi";
-import { MdSubscriptions } from "react-icons/md";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { IoHomeOutline } from "react-icons/io5";
+import { MdOutlineVideoLibrary } from "react-icons/md";
+import { MdOutlineSubscriptions } from "react-icons/md";
+// import { RxHamburgerMenu } from "react-icons/rx";
+import { GiGiftOfKnowledge } from "react-icons/gi";
+
 import "./nav.css";
 
 function Header() {
@@ -10,12 +12,12 @@ function Header() {
     <div className="head">
       <section className="navsection">
         <div className="title">
-          <RxHamburgerMenu className="menu" />
-          <h2>Youtube logo</h2>
+          {/* <RxHamburgerMenu className="menu" /> */}
+          <Option Icon={GiGiftOfKnowledge} navName="GiftTube" />
         </div>
-        <Option Icon={IoMdHome} item="Home" goto="/"/>
-        <Option Icon={BiSolidVideos} item="Shorts" goto="shorts"/>
-        <Option Icon={MdSubscriptions} item="Subscriptions" goto="subVid"/>
+        <Option Icon={IoHomeOutline} navName="Home" />
+        <Option Icon={MdOutlineVideoLibrary} navName="Shorts" />
+        <Option Icon={MdOutlineSubscriptions} navName="Subscriptions" />
         <hr className="rular" />
       </section>
     </div>

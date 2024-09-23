@@ -33,7 +33,6 @@ function Subscription() {
         }
 
         const responsedata = await response.json();
-        console.log("res for this: ", responsedata);
         setSubscribedChanels(responsedata.data);
       } catch (error) {
         console.log(error);
@@ -54,7 +53,7 @@ function Subscription() {
         ) : ( subscribedChanels && subscribedChanels.length !==0 ? subscribedChanels.map((entity)=> <Option key={entity._id} Icon={SiCoinmarketcap} item={entity.channel} />):
           <>
             <p>No subscriptions</p>
-            <Option Icon={IoIosArrowDropdown} item="Show More" />
+            <Option Icon={IoIosArrowDropdown} navName="Show More" />
           </>
         )}
         <hr className="rular" />

@@ -58,33 +58,62 @@
   margin: 10px 0px;
 }
 .firstrow .leftside {
-  width: 21vw;
+  width: 19vw;
   height: 7vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.profilepic {
+  height: 6vh;
+  width: 3vw;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profilepic img {
+  height: 100%;
+  border-radius: 50%;
 }
 .boldname {
   font-size: 17px;
   font-weight: 550;
 }
-.subscribeBtn {
+.subscribeBtn,
+.unsubscribe {
   height: 6vh;
-  padding: 5px 15px;
   font-size: 16px;
-  background-color: white;
   color: black;
   border-radius: 38px;
 }
-.subscribeBtn:hover {
+.subscribeBtn {
+  background-color: white;
+}
+.subscribeBtn:hover,
+.unsubscribe :hover {
   background-color: rgb(196, 196, 196);
   cursor: pointer;
 }
+.unsubscribe {
+  padding: 5px 5px;
+  background-color: rgb(200, 200, 200);
+}
 .btnsGroup {
-  width: 24vw;
+  width: 27vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.btnsGroup button:first-child {
+  font-size: 25px;
+  display: flex;
+  width: 9vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.btnsGroup b {
+  font-size: 14px;
 }
 .btnsGroup button {
   height: 5vh;
@@ -93,6 +122,7 @@
   color: white;
   background-color: rgb(67, 67, 67);
   border-radius: 60px;
+  outline: none;
 }
 .bottomcontent .secondrow {
   width: 100%;
@@ -109,11 +139,13 @@
 .leftside p {
   height: 3vh;
   margin: 0px;
+  display: flex;
 }
 .bottomcontent .comments,
 .mycomment {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  margin-top: 20px;
   row-gap: 10px;
 }
 .comments {
@@ -147,7 +179,7 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  row-gap: 10px;
+  row-gap: 20px;
   padding: 15px 5px;
   margin-bottom: 3vh;
   overflow: auto;
@@ -184,7 +216,7 @@
 }
 .right-part .icons {
   height: 5vh;
-  width: 5.5vw;
+  width: 3.5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -215,8 +247,23 @@
   color: #cccccc;
 }
 .outerbox h5:hover {
-  padding: 5px 10px;
+  padding: 5px 16px;
   background-color: rgb(78, 78, 78);
   color: white;
+}
+.outerbox .editicon {
+  font-size: larger;
+  /* display: none; */
+}
+.editcommentinput {
+  width: 100%;
+  min-height: 4vh;
+  outline: none;
+  font-size: 17px;
+  padding: 5px;
+  font-weight: 600;
+  background-color: black;
+  border: 1px dotted yellowgreen;
+  border-radius: 40px;
 }
 /* common css*/

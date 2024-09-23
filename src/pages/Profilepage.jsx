@@ -3,7 +3,8 @@
 import { IoSearch } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleProMenu } from "../store/authSlice";
 import Loader from "../components/Loader/Loder";
 import "./pages.css";
 
@@ -55,7 +56,6 @@ const VideoItem = ({ item }) => {
     createdAt,
     description,
   } = item;
-  console.log(thumbnail, duration);
   return (
     <div className="item_container">
       <div className="video_box">
@@ -77,15 +77,17 @@ const VideoItem = ({ item }) => {
 };
 
 function Profilepage() {
-  const userName = useSelector((state) => state.auth.data?.userName);
-  const userId = useSelector((state) => state.auth.data?._id);
+  const userName = useSelector((state) => state.auth.profileUserName);
   const [data, setData] = useState({});
+
   const [myVideos, setMyvideos] = useState([]);
   const [myPlaylists, setMyplalists] = useState([]);
   const [stats, setStats] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [myusername, setmyusername] = useState(userName);
   const [active, setActive] = useState("Home");
+  const [pageload, setPageload] = useState(false);
+  const dispatch = useDispatch();
+  // const [contentload, setContentload] = useState(false);
+
   const getuser = async () => {
     const token = localStorage.getItem("accessToken");
     console.log("profile fetching");
@@ -111,8 +113,8 @@ function Profilepage() {
       const responsedata = await response.json();
       console.log("res: ", response);
       const user_info = responsedata.data;
-      console.log("data: ", user_info[0]);
-      setData(user_info[0]);
+      console.log("data: ", user_info);
+      setData(responsedata.data[0]);
     } catch (error) {
       console.log(error);
     }
@@ -123,7 +125,7 @@ function Profilepage() {
     console.log("profile fetching");
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/video/getallvideos?page=1&limit=10&query=0&sortBy=createdAt&sortType=1`,
+        `http://localhost:8000/api/v1/video/getmyvideos?page=1&limit=10&query=0&sortBy=createdAt&sortType=1`,
         {
           method: "GET",
           headers: {
@@ -141,10 +143,8 @@ function Profilepage() {
       }
 
       const responsedata = await response.json();
-      console.log("res: ", response);
-      const user_videos = responsedata.data;
-      console.log("data: ", user_videos);
-      setMyvideos(user_videos);
+      console.log("get videos res: ", responsedata);
+      setMyvideos(responsedata.data);
     } catch (error) {
       console.log(error);
     }
@@ -155,7 +155,7 @@ function Profilepage() {
     console.log("fetching playlists");
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/playlist/user/${userId}`,
+        `http://localhost:8000/api/v1/playlist/user/${data._id}`,
         {
           method: "GET",
           headers: {
@@ -213,33 +213,31 @@ function Profilepage() {
       console.log(error);
     }
   };
-
   useEffect(() => {
-    getvideos();
+    setPageload(true);
+    dispatch(toggleProMenu(false));
   }, []);
-
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
       try {
         switch (active) {
           case "Home":
             await getuser();
+            await getvideos();
+            setPageload(false);
             break;
           case "Videos":
-            await getvideos();
+            // await getvideos();
             break;
           case "Playlists":
             await getplaylists();
             break;
-          default:
+          case "Dashboard":
             await getDashboard();
             break;
         }
       } catch (error) {
         console.log(error);
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -248,7 +246,7 @@ function Profilepage() {
   return (
     <>
       <div className="profile-container">
-        {loading ? (
+        {pageload ? (
           <Loader />
         ) : (
           <>
@@ -259,11 +257,11 @@ function Profilepage() {
               <div className="info_box">
                 <h2>{data?.fullName}</h2>
                 <h3>
-                  @{myusername} . {data?.subscribersCount} subscribers .{" "}
+                  @{userName} . {data?.subscribersCount} subscribers .{" "}
                   {myVideos?.length} video
                 </h3>
                 <p>
-                  Meditation videos ... <strong>More</strong>{" "}
+                  {data?.about} <strong>More</strong>{" "}
                 </p>
                 <div className="buttons_box">
                   <button className="probtn">Customise Channel</button>

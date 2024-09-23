@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { changeNav } from "../../store/authSlice";
+import { changeNav, changeUsername } from "../../store/authSlice";
 
 import "./feed.css";
 function ProfileGate() {
@@ -16,7 +16,14 @@ function ProfileGate() {
         <div className="yourinfo">
           <h4>{fullname}</h4>
           <h4>{username}</h4>
-          <p onClick={() => dispatch(changeNav("profilepage"))}>
+          <p
+            onClick={() => {
+              dispatch(changeUsername(username));
+              setTimeout(() => {
+                dispatch(changeNav("profilepage"));
+              }, 50);
+            }}
+          >
             View you channel
           </p>
         </div>

@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
-// import {useDispatch} from "react-redux"
-// import {login,logout} from "./store/authSlice"
+import {useDispatch} from "react-redux"
 import "./App.css";
 import Loader from "./components/Loader/Loder";
+
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+
 import { login as storelogin } from "./store/authSlice";
 import Homepage from "./components/Homepage";
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [hasLogin, setHasLogin] = useState(null); 
+  const [hasLogin, setHasLogin] = useState(null);
   const getlogin = async (token) => {
     let order = {
       type: "getlogin",
@@ -42,7 +42,7 @@ function App() {
       if (user_info){
         dispatch(storelogin(user_info));
         setHasLogin(true)
-      } 
+      }
     } catch (error) {
       console.log(error);
       navigate("/login");
@@ -62,6 +62,7 @@ function App() {
   }, [navigate]);
 
   return loading ? <Loader /> : <Homepage hasLogin={hasLogin} />;
+
 }
 
 export default App;

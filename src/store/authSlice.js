@@ -4,9 +4,9 @@ const initialState = {
   status: false,
   data: null,
   activeNav: "Home",
-  vidUrl: null,
-  videoId: null,
+  videoInfo: null,
   showprofilemenu: false,
+  profileUserName: null,
 };
 
 const authSlice = createSlice({
@@ -20,13 +20,11 @@ const authSlice = createSlice({
     logout: (state) => {
       state.status = false;
       state.data = null;
-      console.log("inside authslice logout method reset done");
     },
     changeNav: (state, action) => {
-      if (action.payload.navname === "fullscreen video") {
-        state.activeNav = action.payload.navname;
-        state.vidUrl = action.payload.videourl;
-        state.videoId = action.payload.videoId;
+      if (action.payload.navname !== undefined) {
+        state.activeNav = "fullscreen_video";
+        state.videoInfo = action.payload;
         return;
       }
       state.activeNav = action.payload;
@@ -35,9 +33,14 @@ const authSlice = createSlice({
     toggleProMenu: (state, action) => {
       state.showprofilemenu = action.payload;
     },
+    changeUsername: (state, action) => {
+      console.log("updating the usernmae: ", action.payload);
+      state.profileUserName = action.payload;
+    },
   },
 });
 
-export const { login, logout, changeNav, toggleProMenu } = authSlice.actions;
+export const { login, logout, changeNav, toggleProMenu, changeUsername } =
+  authSlice.actions;
 
 export default authSlice.reducer;

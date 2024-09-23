@@ -5,10 +5,8 @@ import React from "react";
 import store from "./store/store.js";
 import App from "./App.jsx";
 import Login from "./pages/Login.jsx";
-import Signup from "./pages/Signup.jsx"
-import Createpost from './components/navigation/Createpost.jsx'
-import Profilepage from "./pages/Profilepage.jsx";
-
+import Signup from "./pages/Signup.jsx";
+import Createpost from "./components/navigation/Createpost.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,16 +18,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/signup",
-    element: <Signup/>,
+    element: <Signup />,
   },
   {
     path: "/video",
+    element: <Createpost />,
+  },
+  {
+    path: "/createpost",
     element: <Createpost/>,
   },
-    // {
-  //   path: "/video/:vid_id",
-  //   element: <Video/>,
-  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

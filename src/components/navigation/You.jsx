@@ -1,5 +1,4 @@
 import Option from "./Option";
-import { BiSolidUserPin } from "react-icons/bi";
 import { LuHistory } from "react-icons/lu";
 import { MdOutlinePlaylistPlay } from "react-icons/md";
 import { GoVideo } from "react-icons/go";
@@ -7,6 +6,7 @@ import { IoIosTimer } from "react-icons/io";
 import { AiOutlineLike } from "react-icons/ai";
 import { GoDownload } from "react-icons/go";
 import { IoMdAddCircleOutline } from "react-icons/io";
+import { FaRegUser } from "react-icons/fa";
 
 function You() {
   return (
@@ -16,18 +16,17 @@ function You() {
           <h4>You</h4>
         </div>
 
-        <Option Icon={IoMdAddCircleOutline} item="Add Video" goto="/video" />
-        <Option Icon={BiSolidUserPin} item="Your Channel" goto="profilepage" />
-        <Option Icon={LuHistory} item="History" goto="History" />
+        <Option Icon={IoMdAddCircleOutline} navName="Add Video" />
+        <Option Icon={FaRegUser} navName="Your Channel" />
+        <Option Icon={LuHistory} navName="History" />
         <Option
           Icon={MdOutlinePlaylistPlay}
-          item="Playlists"
-          goto="Playlists"
-        />
-        <Option Icon={GoVideo} item="Your Videos" goto="Videos" />
-        <Option Icon={IoIosTimer} item="Watch Later" goto="Watch Later" />
-        <Option Icon={AiOutlineLike} item="Liked Videos" goto="Liked Videos" />
-        <Option Icon={GoDownload} item="Downloads" goto="Downloads" />
+          navName="Playlists"
+                  />
+        <Option Icon={GoVideo} navName="Your Videos" />
+        <Option Icon={IoIosTimer} navName="Watch Later"  />
+        <Option Icon={AiOutlineLike} navName="Liked Videos"/>
+        <Option Icon={GoDownload} navName="Downloads" />
         <hr className="rular" />
       </section>
     </>

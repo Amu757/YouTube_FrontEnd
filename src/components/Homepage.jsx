@@ -6,7 +6,7 @@ import Loader from "../components/Loader/Loder";
 import "./style.css";
 import { useEffect, useState } from "react";
 
-function Homepage({hasLogin}) {
+function Homepage({ hasLogin }) {
   const [loading, setLoading] = useState(true);
   const isLoggedin = useSelector((state) => state.auth.status);
   const navigate = useNavigate();
