@@ -12,6 +12,7 @@ function App() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [hasLogin, setHasLogin] = useState(null);
+  
   const getlogin = async (token) => {
     let order = {
       type: "getlogin",

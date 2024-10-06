@@ -285,3 +285,90 @@
   border: 1px solid black;
   color: rgb(4, 4, 4);
 }
+/* showplaylist */
+.showcontainer {
+  height: 100vh;
+  width: 100vw;
+  padding-top: 30px;
+}
+.bottombox_ {
+  margin-top: 3vh;
+  height: 88vh;
+  width: 100vw;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  padding: 10px;
+}
+.bottombox_ .leftbox_ {
+  width: 60%;
+  border-radius: 20px;
+  border: 1px solid yellow;
+}
+.leftbox_ video {
+  width: 100%;
+  border-radius: 20px;
+}
+.bottombox_ .rightbox_ {
+  height: 80%;
+  width: 35%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+.rightbox_ .topbox_ {
+  height: 20%;
+  width: 100%;
+  padding: 5px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.topbox_ .api-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 6vh;
+}
+.api-options .btnlist {
+  display: flex;
+  width: 13%;
+  height: 6vh;
+  justify-content: space-between;
+  font-size: 23px;
+}
+.btnlist div:hover {
+font-size: 25px;
+}
+.topbox_ hr {
+  width: 99%;
+  margin-top: 10px;
+}
+.rightbox_ .bottom_ {
+  height: 80%;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* plalist */
+.option_box {
+  width: 11vw;
+  position: absolute;
+  top: 0vh;
+  right: 6px;
+  background-color: rgb(43, 43, 43);
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+  border-radius: 5px;
+}

@@ -1,0 +1,198 @@
+.containerbox {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 30px;
+}
+.containerbox .flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 13px;
+}
+.list-container {
+  height: 30vh;
+  width: 20vw;
+  border-radius: 20px;
+  border: 1px solid white;
+  padding: 8px;
+}
+.list-container .top {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.top p {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  background-color: black;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.top img {
+  width: 100%;
+  border-radius: 30px;
+}
+.list-container .bottom {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 5px;
+}
+.bottom p {
+  max-height: 4vh;
+  overflow: hidden;
+}
+/* listnames  */
+.list-box_ {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 23vw;
+  min-height: 50vh;
+  max-height: 65vh;
+  position: absolute;
+  right: 46%;
+  top: 11%;
+  background-color: #1b1b1b;
+  padding: 2vw 3vw;
+  border-radius: 30px;
+}
+.list-box_ .top_ {
+  position: sticky;
+  min-height: 5vh;
+  width: 107%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  font-size: large;
+}
+.list-box_ .top_ .closelist {
+  font-size: 28px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.list-box_ .middle_ {
+  width: 100%;
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 10px;
+  overflow-y: scroll;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.middle_ div {
+  padding: 5px 40px;
+  width: 80%;
+}
+.middle_ div:hover {
+  background-color: rgb(65, 65, 65);
+}
+.list-box_ .bottom_ {
+  min-height: 4vh;
+  max-height: 16vh;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 30px;
+}
+.list-box_ .bottom_:hover {
+  background-color: rgb(51, 51, 51);
+}
+
+.bottom_ form {
+  height: 18vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 9px;
+}
+.bottom_ form:hover {
+  background-color: rgb(51, 51, 51);
+}
+.bottom_ form input {
+  width: 100%;
+  padding: 5px 20px;
+  font-size: 15px;
+  outline: none;
+  border-radius: 30px;
+}
+
+.bottom_ .btns {
+  display: flex;
+  column-gap: 30px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 550;
+  margin-top: 5px;
+}
+.btns button {
+  background-color: rgb(255, 255, 255);
+}
+.btns button:nth-child(1) {
+  color: black;
+}
+.btns button:nth-child(2) {
+  color: blue;
+}
+
+/* playlistitem */
+.container-box {
+  height: 11vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  position: relative;
+  padding: 5px 0px;
+}
+.container-box:hover {
+  background-color: rgb(24, 24, 24);
+}
+.container-box p {
+  width: 2vw;
+}
+.container-box .thumbnail {
+  height: 100%;
+  width: 5vw;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.thumbnail img {
+  width: 100%;
+  border-radius: 20px;
+}
+.container-box .info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 60%;
+  cursor: default;
+}
+.info p {
+  color: rgb(119, 119, 119);
+  width: 100%;
+  text-align: start;
+}
+.container-box .optionbox {
+  width: 2vw;
+  height: 4vh;
+  font-size: 20px;
+  align-self: start;
+  cursor: pointer;
+  padding-top: 5px;
+}

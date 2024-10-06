@@ -12,7 +12,7 @@ function ApiOption({ apiName, Icon, setShowMenu }) {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [activeOption, setActiveOption] = useState(null);
-
+  const [createPlaylist, setCreatePlaylist] = useState(false);
   const getLogout = async () => {
     const token = localStorage.getItem("accessToken");
     if (!token) return;

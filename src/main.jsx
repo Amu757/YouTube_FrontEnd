@@ -7,6 +7,7 @@ import App from "./App.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Createpost from "./components/navigation/Createpost.jsx";
+import Playlistpage from "./pages/Playlistpage.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/createpost",
     element: <Createpost/>,
+  },
+  {
+    path: "/playlist",
+    element: <Playlistpage/>,
   },
 ]);
 

@@ -46,7 +46,7 @@ const PlaylistItem = ({ item }) => {
   );
 };
 
-const VideoItem = ({ item }) => {
+export const VideoItem = ({ item }) => {
   const {
     thumbnail,
     videoFile,

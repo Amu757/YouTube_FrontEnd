@@ -10,6 +10,7 @@ function Homepage({ hasLogin }) {
   const [loading, setLoading] = useState(true);
   const isLoggedin = useSelector((state) => state.auth.status);
   const navigate = useNavigate();
+  
   useEffect(() => {
     if (hasLogin === null) {
       return; // Wait until we know the login status

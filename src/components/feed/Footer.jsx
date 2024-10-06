@@ -8,6 +8,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import "./feed.css";
 import Fullscreen from "../videoscreen/Fullscreen";
+import History from "../History";
+import Playlist from "../playlist/Playlist";
 
 export const UnderDev = () => {
   return (
@@ -53,7 +55,7 @@ function Footer() {
 
       const data = await response.json();
 
-      console.log("get video info ", data.data);
+      // console.log("get video info ", data.data);
 
       setAllPosts(data.data.allVideos);
       setAllUsers(data.data.usersInfo);
@@ -97,7 +99,7 @@ function Footer() {
     const fetchData = async () => {
       setLoading(true);
       if (!activeNav) return;
-      console.log("activeNav is ", activeNav);
+      // console.log("activeNav is ", activeNav);
       switch (activeNav) {
         case "Home":
           await getvideos();
@@ -105,11 +107,11 @@ function Footer() {
         case "shorts":
           // ();
           break;
-        case "subVid":
+        case "Subscription":
           await getSubVid();
           break;
         default:
-          console.log("null");
+          console.log("No content to show in the feed");
           break;
       }
       setLoading(false);
@@ -200,11 +202,14 @@ function Footer() {
         return <UpdateCover />;
       case "fullscreen_video":
         return <Fullscreen video_info={video_info} compareDate={compareDate} />;
+      case "History":
+        return <History />;
+      case "Playlists":
+        return <Playlist />;
       default:
         return <UnderDev />;
     }
   };
-
 
   return (
     <div

@@ -8,6 +8,7 @@
   width: 14vw;
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   scrollbar-width: 2px;
 }
 
@@ -115,6 +116,6 @@
 }
 
 /* subscription */
-.sub{
+.sub {
   margin-top: 45px;
 }

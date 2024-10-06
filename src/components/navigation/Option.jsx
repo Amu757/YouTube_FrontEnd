@@ -1,6 +1,8 @@
 import { changeNav, changeUsername } from "../../store/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import History from "../History";
+
 import "./nav.css";
 
 function Option({ Icon, navName }) {
@@ -12,14 +14,14 @@ function Option({ Icon, navName }) {
       case "Add Video":
         navigate("/createpost");
         break;
-      case "Your Channel":
-        dispatch(changeUsername(username));
-        setTimeout(() => {
-          dispatch(changeNav("profilepage"));
-        }, 50);
-        break;
-
+        case "Your Channel":
+          dispatch(changeUsername(username));
+          setTimeout(() => {
+            dispatch(changeNav("profilepage"));
+          }, 50);
+          break;
       default:
+        dispatch(changeNav(navName));
     }
   };
 
@@ -30,7 +32,7 @@ function Option({ Icon, navName }) {
           <div className="icon">
             <Icon fontSize="40px" fill="yellow" />
           </div>
-          <div className="item" style={{fontSize:"25px", color:"yellow"}}>
+          <div className="item" style={{ fontSize: "25px", color: "yellow" }}>
             {navName}
           </div>
         </>
